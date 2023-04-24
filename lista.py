@@ -1,5 +1,6 @@
 from particula  import Particula
-from algoritmos import distancia_euclidiana
+from algoritmos import *
+import json
 
 class ListaParticulas:
     def __init__(self):
@@ -19,3 +20,38 @@ class ListaParticulas:
         return '\n'.join(str(particula) for particula in self.__particulas)
 
 
+    def __len__(self):
+        return(
+            len(self.__particulas)
+        )
+    def __iter__(self):
+        self.count=0
+        return self
+    def __next__ (self):
+        if self.count < len(self.__particulas):
+            particula=self.__particulas[self.count]
+            self.count += 1
+            return particula
+        else:
+            raise StopIteration
+    def guardar(self, ubicacion):
+        try:
+            with open(ubicacion, 'w') as archivo:
+                lista = [particula.to_dict() for particula in self.__particulas]
+                print(lista)
+                json.dump(lista, archivo, indent=5)
+                return 1
+        except:
+            return 0
+    
+    def abrir(self, ubicacion):
+        try:
+            with open(ubicacion, 'r') as archivo:
+                lista = json.load(archivo)
+                self.__particulas = [Particula(**particula) for particula in lista]
+                return 1
+            
+        except:
+            return 0
+    
+        
