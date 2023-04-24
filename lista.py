@@ -1,5 +1,4 @@
 from particula  import Particula
-from algoritmos import *
 import json
 
 class ListaParticulas:
@@ -29,16 +28,15 @@ class ListaParticulas:
         return self
     def __next__ (self):
         if self.count < len(self.__particulas):
-            particula=self.__particulas[self.count]
+            conjunto=self.__particulas[self.count]
             self.count += 1
-            return particula
+            return conjunto
         else:
             raise StopIteration
     def guardar(self, ubicacion):
         try:
             with open(ubicacion, 'w') as archivo:
                 lista = [particula.to_dict() for particula in self.__particulas]
-                print(lista)
                 json.dump(lista, archivo, indent=5)
                 return 1
         except:

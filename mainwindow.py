@@ -7,7 +7,7 @@ from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox
 
 
 class MainWindow(QMainWindow):
-    def __init__(self) -> None:
+    def __init__(self):
         super(MainWindow, self).__init__()
         self.lista=ListaParticulas()
         self.ui = Ui_MainWindow()

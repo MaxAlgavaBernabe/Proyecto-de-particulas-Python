@@ -28,15 +28,16 @@ class Particula:
         )
     def to_dict(self):
         return{
-            "Id: " : self.__id,
-            "Origen_x: " :self.__origen_x,
-            "Origen_y: " :self.__origen_y,
-            "Destino_x: " :self.__destino_x,
-            "Destino_y: " :self.__destino_y,
-            "Velocidad: ": self.__velocidad,
-            "Red: " : self.__red,
-            "Green: ": self.__green,
-            "Blue: ":self.__blue
+            "id": self.__id,
+            "origen_x": self.__origen_x,
+            "origen_y": self.__origen_y,
+            "destino_x": self.__destino_x,
+            "destino_y": self.__destino_y,
+            "velocidad": self.__velocidad,
+            "red" : self.__red,
+            "green": self.__green,
+            "blue": self.__blue
+           
          }   
     @property
     def id(self):
@@ -65,4 +66,7 @@ class Particula:
     @property
     def blue(self):
         return self.__blue
+    @property
+    def distancia(self):
+        return self.__distancia
     
