@@ -3,7 +3,7 @@ from PySide2.QtCore import Slot
 from ui_mainwindow import Ui_MainWindow
 from lista import ListaParticulas
 from particula import Particula
-from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox
+from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QTableWidgetItem
 
 
 class MainWindow(QMainWindow):
@@ -15,8 +15,84 @@ class MainWindow(QMainWindow):
         self.ui.agregarInicio_pushButton.clicked.connect(self.agregar_Inicio)
         self.ui.agregarFinal_pushButton.clicked.connect(self.agregar_Final)
         self.ui.mostrar_pushButton.clicked.connect(self.mostrar)
+        self.ui.buscar_pushButton.clicked.connect(self.buscar)
+        self.ui.mostrar_tabla_pushButton.clicked.connect(self.mostrar_tabla)
         self.ui.actionAbrir.triggered.connect(self.action_abrir_Archivo)
         self.ui.actionGuardar.triggered.connect(self.action_guardar_Archivo)
+    @Slot()
+    def buscar(self):
+        id_buscar=self.ui.buscar.text()
+        encontrado=False
+        for particula in self.lista:
+            if id_buscar== str(particula.id):
+                self.ui.tableWidget.clear()
+                self.ui.tableWidget.setColumnCount(10)
+                headers = ["ID","OrigenX","OrigenY","DestinoX","DestinoY","Velocidad","Red","Green","Blue","Distancia"]
+                self.ui.tableWidget.setHorizontalHeaderLabels(headers)
+                self.ui.tableWidget.setRowCount(1)
+                id_widget= QTableWidgetItem(str(particula.id))
+                origenX_widget= QTableWidgetItem(str(particula.origen_x))
+                origenY_widget= QTableWidgetItem(str(particula.origen_y))
+                destinoX_widget= QTableWidgetItem(str(particula.destino_x))
+                destinoY_widget= QTableWidgetItem(str(particula.destino_y))
+                velocidad_widget= QTableWidgetItem(str(particula.velocidad))
+                red_widget= QTableWidgetItem(str(particula.red))
+                green_widget= QTableWidgetItem(str(particula.green))
+                blue_widget= QTableWidgetItem(str(particula.blue))
+                distancia_widget= QTableWidgetItem(str(particula.distancia))
+                
+
+                self.ui.tableWidget.setItem(0,0,id_widget)
+                self.ui.tableWidget.setItem(0,1,origenX_widget)
+                self.ui.tableWidget.setItem(0,2,origenY_widget)
+                self.ui.tableWidget.setItem(0,3,destinoX_widget)
+                self.ui.tableWidget.setItem(0,4,destinoY_widget)
+                self.ui.tableWidget.setItem(0,5,velocidad_widget)
+                self.ui.tableWidget.setItem(0,6,red_widget)
+                self.ui.tableWidget.setItem(0,7,green_widget)
+                self.ui.tableWidget.setItem(0,8,blue_widget)
+                self.ui.tableWidget.setItem(0,9,distancia_widget)
+                encontrado = True
+        
+                return
+        if encontrado is False:
+              QMessageBox.information(
+                self,
+                "Error",
+                "No se encontro el id " + id_buscar
+            )
+
+    @Slot()
+    def mostrar_tabla(self):
+        self.ui.tableWidget.setColumnCount(10)
+        headers = ["ID","OrigenX","OrigenY","DestinoX","DestinoY","Velocidad","Red","Green","Blue","Distancia"]
+        self.ui.tableWidget.setHorizontalHeaderLabels(headers)
+        self.ui.tableWidget.setRowCount(len(self.lista))
+        row=0
+        for particula in self.lista:
+            id_widget= QTableWidgetItem(str(particula.id))
+            origenX_widget= QTableWidgetItem(str(particula.origen_x))
+            origenY_widget= QTableWidgetItem(str(particula.origen_y))
+            destinoX_widget= QTableWidgetItem(str(particula.destino_x))
+            destinoY_widget= QTableWidgetItem(str(particula.destino_y))
+            velocidad_widget= QTableWidgetItem(str(particula.velocidad))
+            red_widget= QTableWidgetItem(str(particula.red))
+            green_widget= QTableWidgetItem(str(particula.green))
+            blue_widget= QTableWidgetItem(str(particula.blue))
+            distancia_widget= QTableWidgetItem(str(particula.distancia))
+            
+
+            self.ui.tableWidget.setItem(row,0,id_widget)
+            self.ui.tableWidget.setItem(row,1,origenX_widget)
+            self.ui.tableWidget.setItem(row,2,origenY_widget)
+            self.ui.tableWidget.setItem(row,3,destinoX_widget)
+            self.ui.tableWidget.setItem(row,4,destinoY_widget)
+            self.ui.tableWidget.setItem(row,5,velocidad_widget)
+            self.ui.tableWidget.setItem(row,6,red_widget)
+            self.ui.tableWidget.setItem(row,7,green_widget)
+            self.ui.tableWidget.setItem(row,8,blue_widget)
+            self.ui.tableWidget.setItem(row,9,distancia_widget)
+            row += 1
     @Slot( )
     def action_abrir_Archivo(self):
         ubicacion = QFileDialog.getOpenFileName(

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>788</width>
-    <height>642</height>
+    <width>709</width>
+    <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,9 +21,9 @@ background-color: rgb(95, 99, 115);</string>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="1">
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QTabWidget" name="tab_4">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -236,6 +236,37 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Tabla</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="buscar">
+          <property name="placeholderText">
+           <string>ID Particula</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="buscar_pushButton">
+          <property name="text">
+           <string>Buscar</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="mostrar_tabla_pushButton">
+          <property name="text">
+           <string>Mostrar</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="3">
+         <widget class="QTableWidget" name="tableWidget"/>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
         <string>Dibujar</string>
@@ -244,17 +275,17 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
         <item row="0" column="0" colspan="2">
          <widget class="QGraphicsView" name="pantalla"/>
         </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="dibujar_pushButton">
-          <property name="text">
-           <string>Dibujar</string>
-          </property>
-         </widget>
-        </item>
         <item row="1" column="1">
          <widget class="QPushButton" name="limpiar_pushButton">
           <property name="text">
            <string>Limpiar</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="dibujar_pushButton">
+          <property name="text">
+           <string>Dibujar</string>
           </property>
          </widget>
         </item>
@@ -269,7 +300,7 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>788</width>
+     <width>709</width>
      <height>21</height>
     </rect>
    </property>
