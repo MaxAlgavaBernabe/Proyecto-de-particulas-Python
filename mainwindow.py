@@ -1,16 +1,17 @@
-from PySide2.QtWidgets import QMainWindow
+from PySide2.QtWidgets import QMainWindow, QGraphicsScene
 from PySide2.QtCore import Slot
 from ui_mainwindow import Ui_MainWindow
 from lista import ListaParticulas
 from particula import Particula
 from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QTableWidgetItem
-
+from PySide2.QtGui import QPen, QColor, QTransform
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.lista=ListaParticulas()
         self.ui = Ui_MainWindow()
+        self.scene=QGraphicsScene()
         self.ui.setupUi(self)
         self.ui.agregarInicio_pushButton.clicked.connect(self.agregar_Inicio)
         self.ui.agregarFinal_pushButton.clicked.connect(self.agregar_Final)
@@ -19,6 +20,37 @@ class MainWindow(QMainWindow):
         self.ui.mostrar_tabla_pushButton.clicked.connect(self.mostrar_tabla)
         self.ui.actionAbrir.triggered.connect(self.action_abrir_Archivo)
         self.ui.actionGuardar.triggered.connect(self.action_guardar_Archivo)
+        self.ui.dibujar_pushButton.clicked.connect(self.dibujar_escena)
+        self.ui.limpiar_pushButton.clicked.connect(self.limpiar_escena)
+        self.ui.pantalla.setScene(self.scene)
+    @Slot()
+    def dibujar_escena(self):
+      
+        for particula in self.lista:
+            pen=QPen()
+            pen.setWidth(2)
+            r=particula.red
+            g=particula.green
+            b=particula.blue
+            origen_x=particula.origen_x
+            origen_y=particula.origen_y
+            destino_x=particula.destino_x
+            destino_y=particula.destino_y
+            color=QColor(r,g,b)
+            pen.setColor(color)
+            self.scene.addEllipse(origen_x,origen_y,6,6,pen)
+            self.scene.addEllipse(destino_x,destino_y,6,6,pen)
+            self.scene.addLine(origen_x+3,origen_y+3,destino_x+3,destino_y+3,pen)
+
+    @Slot()
+    def limpiar_escena(self):
+        self.scene.clear()
+    def wheelEvent(self, event):
+        
+        if event.delta()>0:
+            self.ui.pantalla.scale(1.2,1.2)
+        else:
+            self.ui.pantalla.scale(0.8,0.8)
     @Slot()
     def buscar(self):
         id_buscar=self.ui.buscar.text()
