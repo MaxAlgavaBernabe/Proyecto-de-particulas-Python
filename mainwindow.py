@@ -22,7 +22,20 @@ class MainWindow(QMainWindow):
         self.ui.actionGuardar.triggered.connect(self.action_guardar_Archivo)
         self.ui.dibujar_pushButton.clicked.connect(self.dibujar_escena)
         self.ui.limpiar_pushButton.clicked.connect(self.limpiar_escena)
+        self.ui.actionPor_ID.triggered.connect(self.ordenar_id)
+        self.ui.actionPor_Distancia.triggered.connect(self.ordenar_distancia)
+        self.ui.actionPor_Velocidad_ascendente.triggered.connect(self.ordenar_velocidad)
         self.ui.pantalla.setScene(self.scene)
+    @Slot()
+    def ordenar_id(self):
+        
+            self.lista.sort_id()
+    @Slot()
+    def ordenar_distancia(self):
+        self.lista.sort_distancia()
+    @Slot()
+    def ordenar_velocidad(self):
+        self.lista.sort_velocidad()
     @Slot()
     def dibujar_escena(self):
       

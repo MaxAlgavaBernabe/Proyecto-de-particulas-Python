@@ -14,6 +14,13 @@ class ListaParticulas:
     def mostrar(self):
         for particula in self.__particulas:
             print(particula)
+
+    def sort_id(self):
+       self.__particulas.sort(key=lambda particula: particula.id)
+    def sort_distancia(self):
+        self.__particulas.sort(key=lambda particula: particula.distancia, reverse=True)
+    def sort_velocidad(self):
+        self.__particulas.sort(key=lambda particula: particula.velocidad)
     def __str__(self):
        
         return '\n'.join(str(particula) for particula in self.__particulas)

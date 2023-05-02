@@ -23,7 +23,7 @@ background-color: rgb(95, 99, 115);</string>
     <item row="0" column="1">
      <widget class="QTabWidget" name="tab_4">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -311,7 +311,16 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <addaction name="actionGuardar"/>
     <addaction name="actionAbrir"/>
    </widget>
+   <widget class="QMenu" name="menuOrdenar">
+    <property name="title">
+     <string>Ordenar</string>
+    </property>
+    <addaction name="actionPor_ID"/>
+    <addaction name="actionPor_Distancia"/>
+    <addaction name="actionPor_Velocidad_ascendente"/>
+   </widget>
    <addaction name="menuAbrir"/>
+   <addaction name="menuOrdenar"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionGuardar">
@@ -322,6 +331,21 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
   <action name="actionAbrir">
    <property name="text">
     <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionPor_ID">
+   <property name="text">
+    <string>Por ID(ascendente)</string>
+   </property>
+  </action>
+  <action name="actionPor_Distancia">
+   <property name="text">
+    <string>Por Distancia(descendente)</string>
+   </property>
+  </action>
+  <action name="actionPor_Velocidad_ascendente">
+   <property name="text">
+    <string>Por Velocidad(ascendente)</string>
    </property>
   </action>
  </widget>
