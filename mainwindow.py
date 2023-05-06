@@ -26,6 +26,46 @@ class MainWindow(QMainWindow):
         self.ui.actionPor_Distancia.triggered.connect(self.ordenar_distancia)
         self.ui.actionPor_Velocidad_ascendente.triggered.connect(self.ordenar_velocidad)
         self.ui.pantalla.setScene(self.scene)
+        self.ui.actionPuntos.triggered.connect(self.dibujar_puntos)
+        self.ui.actionPuntos_cercanos.triggered.connect(self.dibujar_puntos_cercanos)
+    @Slot()
+    def dibujar_puntos(self):
+        for particula in self.lista:
+            pen=QPen()
+            pen.setWidth(2)
+            r=particula.red
+            g=particula.green
+            b=particula.blue
+            origen_x=particula.origen_x
+            origen_y=particula.origen_y
+            destino_x=particula.destino_x
+            destino_y=particula.destino_y
+            color=QColor(r,g,b)
+            pen.setColor(color)
+            self.scene.addEllipse(origen_x,origen_y,6,6,pen)
+            self.scene.addEllipse(destino_x,destino_y,6,6,pen)
+            
+    @Slot()
+    def dibujar_puntos_cercanos(self):
+        resultado=self.lista.puntos_cercanos()
+        
+        for punto1 , punto2,r,g,b in resultado:
+            pen=QPen()
+            pen.setWidth(2)
+            x1=punto1[0]
+            y1=punto1[1]
+            r=r
+            g=g
+            b=b
+            x2=punto2[0]
+            y2=punto2[1]
+            
+            
+            color=QColor(r,g,b)
+            pen.setColor(color)
+
+            
+            self.scene.addLine(x1+3,y1+3,x2+3,y2+3,pen)
     @Slot()
     def ordenar_id(self):
         

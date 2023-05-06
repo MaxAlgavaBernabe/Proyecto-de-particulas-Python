@@ -1,5 +1,6 @@
 from particula  import Particula
 import json
+from algoritmos import *
 
 class ListaParticulas:
     def __init__(self):
@@ -25,7 +26,16 @@ class ListaParticulas:
        
         return '\n'.join(str(particula) for particula in self.__particulas)
 
-
+    def puntos_cercanos(self):
+        puntos = []
+        for p in self.__particulas:
+        #Pasar a lista de tuplas para el algoritmo y agregar los colores
+            p1 = (p.origen_x,p.origen_y,p.red,p.green,p.blue)
+            p2 = (p.destino_x,p.destino_y,p.red,p.green,p.blue)
+            puntos.append(p1)
+            puntos.append(p2)
+        res = puntos_mas_cercanos(puntos)
+        return res
     def __len__(self):
         return(
             len(self.__particulas)

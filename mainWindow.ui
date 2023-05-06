@@ -23,20 +23,118 @@ background-color: rgb(95, 99, 115);</string>
     <item row="0" column="1">
      <widget class="QTabWidget" name="tab_4">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
         <string>Capturar</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="1">
+         <widget class="QPlainTextEdit" name="salida"/>
+        </item>
         <item row="0" column="0">
          <widget class="QGroupBox" name="groupBox">
           <property name="title">
            <string/>
           </property>
           <layout class="QGridLayout" name="gridLayout">
+           <item row="11" column="1">
+            <widget class="QPushButton" name="agregarInicio_pushButton">
+             <property name="text">
+              <string>Agregar Inicio</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QSpinBox" name="red_spinBox">
+             <property name="maximum">
+              <number>255</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+             </property>
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+             </property>
+             <property name="text">
+              <string>Origen X</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QSpinBox" name="destinoY_spinBox">
+             <property name="maximum">
+              <number>500</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="origenX_spinBox">
+             <property name="maximum">
+              <number>500</number>
+             </property>
+            </widget>
+           </item>
            <item row="6" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="styleSheet">
+              <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(243, 243, 243);</string>
+             </property>
+             <property name="text">
+              <string>Velocidad</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QSpinBox" name="destinoX_spinBox">
+             <property name="maximum">
+              <number>500</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="id_spinBox">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>999</number>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLineEdit" name="velocidad_lineEdit"/>
+           </item>
+           <item row="13" column="1">
+            <widget class="QPushButton" name="mostrar_pushButton">
+             <property name="text">
+              <string>Mostrar Informacion capturada</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QSpinBox" name="BluespinBox">
+             <property name="maximum">
+              <number>255</number>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
             <widget class="QLabel" name="label_3">
              <property name="font">
               <font>
@@ -59,70 +157,32 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
              </property>
             </widget>
            </item>
-           <item row="4" column="1">
-            <widget class="QSpinBox" name="destinoY_spinBox">
+           <item row="8" column="1">
+            <widget class="QSpinBox" name="green_spinBox">
              <property name="maximum">
-              <number>500</number>
+              <number>255</number>
              </property>
             </widget>
            </item>
-           <item row="10" column="1">
-            <widget class="QPushButton" name="agregarInicio_pushButton">
+           <item row="3" column="0">
+            <widget class="QLabel" name="label">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+             </property>
              <property name="text">
-              <string>Agregar Inicio</string>
+              <string>Destino X</string>
              </property>
             </widget>
            </item>
-           <item row="11" column="1">
+           <item row="12" column="1">
             <widget class="QPushButton" name="agregarFinal_pushButton">
              <property name="text">
               <string>Agregar Final</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QSpinBox" name="id_spinBox"/>
-           </item>
-           <item row="12" column="1">
-            <widget class="QPushButton" name="mostrar_pushButton">
-             <property name="text">
-              <string>Mostrar Informacion capturada</string>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="0">
-            <widget class="QLabel" name="label_4">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(85, 170, 0);
-font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
-             </property>
-             <property name="text">
-              <string>Green</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QSpinBox" name="origenX_spinBox">
-             <property name="maximum">
-              <number>500</number>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="0">
-            <widget class="QLabel" name="label_6">
-             <property name="styleSheet">
-              <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(243, 243, 243);</string>
-             </property>
-             <property name="text">
-              <string>Velocidad</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="1">
-            <widget class="QLineEdit" name="velocidad_lineEdit"/>
-           </item>
-           <item row="8" column="0">
+           <item row="9" column="0">
             <widget class="QLabel" name="label_5">
              <property name="styleSheet">
               <string notr="true">color: rgb(0, 85, 255);
@@ -137,43 +197,18 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
              </property>
             </widget>
            </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label">
+           <item row="8" column="0">
+            <widget class="QLabel" name="label_4">
              <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);
+              <string notr="true">color: rgb(85, 170, 0);
 font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
              </property>
              <property name="text">
-              <string>Destino X</string>
+              <string>Green</string>
              </property>
             </widget>
            </item>
-           <item row="7" column="1">
-            <widget class="QSpinBox" name="green_spinBox">
-             <property name="maximum">
-              <number>255</number>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_7">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);
-font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
-             </property>
-             <property name="text">
-              <string>ID</string>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="1">
-            <widget class="QSpinBox" name="red_spinBox">
-             <property name="maximum">
-              <number>255</number>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
+           <item row="5" column="0">
             <widget class="QLabel" name="label_2">
              <property name="styleSheet">
               <string notr="true">
@@ -186,38 +221,13 @@ color: rgb(255, 255, 255);</string>
             </widget>
            </item>
            <item row="2" column="1">
-            <widget class="QSpinBox" name="destinoX_spinBox">
-             <property name="maximum">
-              <number>500</number>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="1">
-            <widget class="QSpinBox" name="BluespinBox">
-             <property name="maximum">
-              <number>255</number>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
             <widget class="QSpinBox" name="origenY_spinBox">
              <property name="maximum">
               <number>500</number>
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_8">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);
-font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
-             </property>
-             <property name="text">
-              <string>Origen X</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
+           <item row="2" column="0">
             <widget class="QLabel" name="label_9">
              <property name="styleSheet">
               <string notr="true">color: rgb(255, 255, 255);
@@ -230,9 +240,6 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
            </item>
           </layout>
          </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QPlainTextEdit" name="salida"/>
         </item>
        </layout>
       </widget>
@@ -319,8 +326,17 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <addaction name="actionPor_Distancia"/>
     <addaction name="actionPor_Velocidad_ascendente"/>
    </widget>
+   <widget class="QMenu" name="menuVer">
+    <property name="title">
+     <string>Ver</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionPuntos"/>
+    <addaction name="actionPuntos_cercanos"/>
+   </widget>
    <addaction name="menuAbrir"/>
    <addaction name="menuOrdenar"/>
+   <addaction name="menuVer"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionGuardar">
@@ -346,6 +362,16 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
   <action name="actionPor_Velocidad_ascendente">
    <property name="text">
     <string>Por Velocidad(ascendente)</string>
+   </property>
+  </action>
+  <action name="actionPuntos">
+   <property name="text">
+    <string>Puntos</string>
+   </property>
+  </action>
+  <action name="actionPuntos_cercanos">
+   <property name="text">
+    <string>Puntos cercanos</string>
    </property>
   </action>
  </widget>
